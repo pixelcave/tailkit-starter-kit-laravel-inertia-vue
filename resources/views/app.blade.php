@@ -4,8 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title inertia:title>Tailkit Project</title>
-
     <!-- Favicons -->
     <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml" />
     <link rel="icon" href="favicon.png" type="image/png" />
@@ -22,10 +20,12 @@
     />
 
     <!-- Styles / Scripts -->
-    @vite(["resources/js/app.js", "resources/js/Pages/{$page["component"]}.vue"])
-    @inertiaHead
+    @vite("resources/js/app.js")
+    <x-inertia::head>
+      <title>Tailkit Project</title>
+    </x-inertia::head>
   </head>
   <body class="antialiased">
-    @inertia
+    <x-inertia::app />
   </body>
 </html>
